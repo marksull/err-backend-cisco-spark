@@ -49,24 +49,24 @@ BOT_IDENTITY = {
 
 ## Joining Rooms
 
-As the backend starts it will automatically for each room listed in CATROOM_PRESENCE:
- 1) Send Spark join
- 2) Create a webhook
+As the backend starts, for each room listed in CATROOM_PRESENCE it will automatically:
+1. Send Spark join
+2. Create a webhook
 
 Once the backend shuts down, all created webhooks will be cleaned up.
 
 When configuring CHATROOM_PRESENCE use the Spark ID for each room. For example, your config.py might look like:
 
-'''
+```
 DEV_ROOM = 'Y2lxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1'
 MY_ROOM = 'Y2lxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx2'
 
 CHATROOM_PRESENCE = (DEV_ROOM, MY_ROOM)
-'''
+```
 
 ## Requirements
 
-This backend requires errbot plugin (https://github.com/marksull/err-webhook-cisco-spark).
+This backend requires the errbot plugin err-webhook-cisck-spark (https://github.com/marksull/err-webhook-cisco-spark).
 
 ## Known Issues
 
