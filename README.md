@@ -74,16 +74,16 @@ This backend requires the errbot plugin err-webhook-cisck-spark (https://github.
 Cisco Spark integration. Unfortunately cmlCiscoSparkSDK does not support Python 3+ and errbot is recommended to run
 as 3.3+.
 
-As a workaround simply run futurize (http://python-future.org/automatic_conversion.html#futurize-py2-to-py2-3) on this
-package before installing:
+  As a workaround simply run futurize (http://python-future.org/automatic_conversion.html#futurize-py2-to-py2-3) on this
+  package before installing:
 
-```
-futurize --stage1 cmlCiscoSparkSDK/**/*.py
-futurize --stage2 cmlCiscoSparkSDK/**/*.py
-```
+  ```
+  futurize --stage1 cmlCiscoSparkSDK/**/*.py
+  futurize --stage2 cmlCiscoSparkSDK/**/*.py
+  ```
 
-I need to reach out to the owner of this library to determine if they would be happy to consider a pull request of a
-futurized version.
+  I need to reach out to the owner of this library to determine if they would be happy to consider a pull request of a
+  futurized version.
 
 
 2. cmlCiscoSparkSDK users versioneer to version the package but unfortunately this has not worked reliably for me in
