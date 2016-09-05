@@ -47,6 +47,23 @@ BOT_IDENTITY = {
 }
 ```
 
+## Joining Rooms
+
+As the backend starts it will automatically for each room listed in CATROOM_PRESENCE:
+ 1) Send Spark join
+ 2) Create a webhook
+
+Once the backend shuts down, all created webhooks will be cleaned up.
+
+When configuring CHATROOM_PRESENCE use the Spark ID for each room. For example, your config.py might look like:
+
+'''
+DEV_ROOM = 'Y2lxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx1'
+MY_ROOM = 'Y2lxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx2'
+
+CHATROOM_PRESENCE = (DEV_ROOM, MY_ROOM)
+'''
+
 ## Requirements
 
 This backend requires errbot plugin (https://github.com/marksull/err-webhook-cisco-spark).
@@ -57,8 +74,8 @@ This backend requires errbot plugin (https://github.com/marksull/err-webhook-cis
 Cisco Spark integration. Unfortunately cmlCiscoSparkSDK does not support Python 3+ and errbot is recommended to run
 as 3.3+.
 
-As a workaround simply run futurize (http://python-future.org/automatic_conversion.html#futurize-py2-to-py2-3) of this
-package before installing
+As a workaround simply run futurize (http://python-future.org/automatic_conversion.html#futurize-py2-to-py2-3) on this
+package before installing:
 
 ```
 futurize --stage1 cmlCiscoSparkSDK/**/*.py
