@@ -1,0 +1,6 @@
+[Core]
+Name = CiscoSpark
+Module = CiscoSpark
+
+[Documentation]
+Description = This is a backend implementation for Cisco Spark
