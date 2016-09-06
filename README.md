@@ -49,8 +49,9 @@ BOT_IDENTITY = {
 
 ## Joining Rooms
 
-As the backend starts, for each room listed in CATROOM_PRESENCE it will automatically:
-1. Send Spark join
+As the backend starts, for each room listed in CHATROOM_PRESENCE it will automatically:
+
+1. Send a room join request
 2. Create a webhook
 
 Once the backend shuts down, all created webhooks will be cleaned up.
