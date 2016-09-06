@@ -66,27 +66,13 @@ CHATROOM_PRESENCE = (DEV_ROOM, MY_ROOM)
 
 ## Requirements
 
-This backend requires the errbot plugin err-webhook-cisck-spark (https://github.com/marksull/err-webhook-cisco-spark).
+This backend requires:
 
-## Known Issues
+1. The errbot plugin err-webhook-cisck-spark (https://github.com/marksull/err-webhook-cisco-spark).
 
-1. This backend relies on the library cmlCiscoSparkSDK (https://github.com/cmlccie/cmlCiscoSparkSDK) to handle the
-Cisco Spark integration. Unfortunately cmlCiscoSparkSDK does not support Python 3+ and errbot is recommended to run
-as 3.3+.
+2. The library cmlCiscoSparkSDK (https://github.com/marksull/cmlCiscoSparkSDK)
 
-  As a workaround simply run futurize (http://python-future.org/automatic_conversion.html#futurize-py2-to-py2-3) on this
-  package before installing:
-
-  ```
-  futurize --stage1 cmlCiscoSparkSDK/**/*.py
-  futurize --stage2 cmlCiscoSparkSDK/**/*.py
-  ```
-
-  I need to reach out to the owner of this library to determine if they would be happy to consider a pull request of a
-  futurized version.
-
-
-2. cmlCiscoSparkSDK users versioneer to version the package but unfortunately this has not worked reliably for me in
+cmlCiscoSparkSDK uses versioneer to version the package but unfortunately this has not worked reliably for me in
 later versions of pip. As per the recommendations on versioneer (https://github.com/warner/python-versioneer) install
 cmlCiscoSparkSDK with the following command:
 
