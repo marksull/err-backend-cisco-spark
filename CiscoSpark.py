@@ -552,12 +552,6 @@ class CiscoSparkBackend(ErrBot):
         :param mess: A CiscoSparkMessage
         """
         self.session.create_message(roomId=mess.to.room.id, text=mess.body, markdown=mess.body)
-        # log.debug("send_message")
-        # # super().send_message(mess)
-        # pp = pprint.PrettyPrinter(indent=4)
-        # print("xxxxxxxxxxxxxx  ")
-        # pp.pprint(mess.to.room)
-        # print(dir(mess.to.room))
 
     def build_reply(self, mess, text=None, private=False):
         """
