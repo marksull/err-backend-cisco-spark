@@ -71,11 +71,11 @@ This backend requires:
 
 1. The errbot plugin err-webhook-cisck-spark (https://github.com/marksull/err-webhook-cisco-spark).
 
-2. The library cmlCiscoSparkSDK (https://github.com/marksull/cmlCiscoSparkSDK)
+2. The library cmlCiscoSparkSDK (https://github.com/cmlccie/cmlCiscoSparkSDK)
 
 cmlCiscoSparkSDK uses versioneer to version the package but unfortunately this has not worked reliably for me in
 later versions of pip. As per the recommendations on versioneer (https://github.com/warner/python-versioneer) install
-cmlCiscoSparkSDK with the following command:
+cmlCiscoSparkSDK with the following command as a workaround:
 
 ```
 pip install --editable .
