@@ -31,7 +31,7 @@ To configure the bot you will need:
    found here (https://developer.ciscospark.com/bots.html)
 
 2. An Internet reachable URL for the Webhook. Spark uses a Spark initiated Webhooks to notify of any events. As a result
-   the URL you provide must be reachable from the net. For testing/evaluation (ngrok.com) is a fantastic tool to expose
+   the URL you provide must be reachable from the net. For testing/evaluation (http://ngrok.com) is a fantastic tool to expose
    a single port on a private device to Spark.
 
 3. A webhook secret pass phrase (free text of your choosing). This secret will be included when the errbot webhooks
