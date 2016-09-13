@@ -534,7 +534,7 @@ class CiscoSparkBackend(ErrBot):
         :param strrep: The ID of the Cisco Spark person
         :return: CiscoSparkPerson
         """
-        return self.get_person_using_id(strrep)
+        return self.create_person_using_id(strrep)
 
     def query_room(self, room):
         """
@@ -551,7 +551,10 @@ class CiscoSparkBackend(ErrBot):
 
         :param mess: A CiscoSparkMessage
         """
-        self.session.create_message(roomId=mess.to.room.id, text=mess.body, markdown=mess.body)
+        if type(mess.to) == CiscoSparkPerson:
+            self.session.create_message(toPersonId=mess.to.id, text=mess.body, markdown=mess.body)
+        else:
+            self.session.create_message(roomId=mess.to.room.id, text=mess.body, markdown=mess.body)
 
     def build_reply(self, mess, text=None, private=False):
         """
