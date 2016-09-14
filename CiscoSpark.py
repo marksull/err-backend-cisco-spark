@@ -2,6 +2,7 @@ import sys
 import time
 import logging
 import requests
+from markdown import markdown
 
 from errbot.errBot import ErrBot
 from errbot.backends.base import Message, Person, Room, RoomOccupant
@@ -551,10 +552,11 @@ class CiscoSparkBackend(ErrBot):
 
         :param mess: A CiscoSparkMessage
         """
+        md = markdown(mess.body, extensions=['markdown.extensions.nl2br'])
         if type(mess.to) == CiscoSparkPerson:
-            self.session.create_message(toPersonId=mess.to.id, text=mess.body, markdown=mess.body)
+            self.session.create_message(toPersonId=mess.to.id, text=mess.body, markdown=md)
         else:
-            self.session.create_message(roomId=mess.to.room.id, text=mess.body, markdown=mess.body)
+            self.session.create_message(roomId=mess.to.room.id, text=mess.body, markdown=md)
 
     def build_reply(self, mess, text=None, private=False):
         """
