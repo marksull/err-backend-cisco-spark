@@ -552,7 +552,7 @@ class CiscoSparkBackend(ErrBot):
 
         :param mess: A CiscoSparkMessage
         """
-        md = markdown(mess.body, extensions=['markdown.extensions.nl2br'])
+        md = markdown(mess.body, extensions=['markdown.extensions.nl2br', 'markdown.extensions.fenced_code'])
         if type(mess.to) == CiscoSparkPerson:
             self.session.create_message(toPersonId=mess.to.id, text=mess.body, markdown=md)
         else:
