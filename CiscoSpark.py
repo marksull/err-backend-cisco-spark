@@ -226,7 +226,9 @@ class CiscoSparkRoom(Room):
             log.debug("{} is NOW a member of {} ({})".format(self._bot.bot_identifier.displayName, self.title, self.id))
 
         except requests.exceptions.HTTPError as error:
-            if error.response.status_code == 409:
+            # API now returning a 403 when trying to add user to a direct conversation and they are already in the
+            # conversation. For groups if the user is already a member a 409 is returned.
+            if error.response.status_code == 403 or error.response.status_code == 409:
                 log.debug("{} is already a member of {} ({})".format(self._bot.bot_identifier.displayName, self.title,
                                                                      self.id))
             else:
