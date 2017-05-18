@@ -7,7 +7,7 @@ from markdown import markdown
 from errbot.errBot import ErrBot
 from errbot.backends.base import Message, Person, Room, RoomOccupant
 
-from cmlCiscoSparkSDK import sparkapi
+import ciscosparkapi as sparkapi
 
 log = logging.getLogger('errbot.backends.CiscoSpark')
 
