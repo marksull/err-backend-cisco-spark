@@ -351,7 +351,7 @@ class CiscoSparkBackend(ErrBot):
 
         log.debug("Fetching and building identifier for the bot itself.")
         self._session = sparkapi.CiscoSparkAPI(self._bot_token)
-        self.bot_identifier = CiscoSparkPerson(self, self._session.get_person_me())
+        self.bot_identifier = CiscoSparkPerson(self, self._session.people.me())
         log.debug("Done! I'm connected as {} : {} ".format(self.bot_identifier, self.bot_identifier.emails))
 
     @property
