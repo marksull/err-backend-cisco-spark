@@ -79,7 +79,7 @@ class CiscoSparkPerson(Person):
         :param value: the value to search for
         :return: A CiscoSparkPerson
         """
-        for person in session.get_people(email=value):
+        for person in session.people.list(email=value):
             return CiscoSparkPerson(person)
         return CiscoSparkPerson()
 
@@ -92,7 +92,7 @@ class CiscoSparkPerson(Person):
         :param value: the value to search for
         :return: A CiscoSparkPerson
         """
-        for person in session.get_people(displayName=value):
+        for person in session.people.list(displayName=value):
             return CiscoSparkPerson(person)
         return CiscoSparkPerson()
 
