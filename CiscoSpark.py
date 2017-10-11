@@ -105,7 +105,7 @@ class CiscoSparkPerson(Person):
         :param value: the Spark ID
         :return: A CiscoSparkPerson
         """
-        return CiscoSparkPerson(session.get_person(value))
+        return CiscoSparkPerson(session.people.get(value))
 
     def load(self):
         self._spark_person = self._bot.session.Person(self.id)
