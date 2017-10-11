@@ -404,7 +404,7 @@ class CiscoSparkBackend(ErrBot):
         """
         log.debug("Deleting ALL webhooks attached to rooms")
 
-        for hook in self.session.get_webhooks():
+        for hook in self.session.webhooks.list():
             if hook.name == CISCO_SPARK_WEBHOOK_ID:
                 filer, filter_id = hook.filter.split("=")
                 if filer == 'roomId':
