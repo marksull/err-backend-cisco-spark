@@ -481,7 +481,7 @@ class CiscoSparkBackend(ErrBot):
         :param id: The id of the message to load
         :return: Message
         """
-        return self.session.get_message(id)
+        return self.session.messages.get(id)
 
     def get_occupant_using_id(self, person, room):
         """
