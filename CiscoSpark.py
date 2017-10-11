@@ -207,7 +207,7 @@ class CiscoSparkRoom(Room):
         log.debug("Updating occupants for room {} ({})".format(self.title, self.id))
         self._occupants.clear()
 
-        for member in self._bot.session.get_memberships(self.id):
+        for member in self._bot.session.memberships.get(self.id):
             self._occupants.append(CiscoSparkRoomOccupant(self.id, membership=member))
 
         log.debug("Total occupants for room {} ({}) is {} ".format(self.title, self.id, len(self._occupants)))
