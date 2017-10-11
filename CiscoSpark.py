@@ -222,7 +222,7 @@ class CiscoSparkRoom(Room):
         log.debug("Joining room {} ({})".format(self.title, self.id))
 
         try:
-            self._bot.session.create_membership(self.id, self._bot.bot_identifier.id)
+            self._bot.session.memberships.create(self.id, self._bot.bot_identifier.id)
             log.debug("{} is NOW a member of {} ({})".format(self._bot.bot_identifier.displayName, self.title, self.id))
 
         except requests.exceptions.HTTPError as error:
