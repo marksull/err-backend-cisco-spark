@@ -200,7 +200,7 @@ class CiscoSparkRoom(Room):
 
     @classmethod
     def get_using_id(cls, backend, val):
-        return CiscoSparkRoom(backend, backend.session.get_room(val))
+        return CiscoSparkRoom(backend, backend.session.rooms.get(val))
 
     def update_occupants(self):
 
