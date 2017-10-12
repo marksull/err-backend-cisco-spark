@@ -246,13 +246,13 @@ class CiscoSparkRoom(Room):
         """
         Create a webhook that listens to new messages for this room (id)
         """
-        self._webhook = self._bot.webhooks.create(filter="roomId={}".format(self.id))
+        self._webhook = self._bot.create_webhook(filter="roomId={}".format(self.id))
 
     def webhook_delete(self):
         """
         Delete the webhook for this room
         """
-        self._bot.webhooks.delete(self._webhook)
+        self._bot.delete_webhook(self._webhook)
 
     def leave(self, reason=None):
         log.debug("Leave room yet to be implemented")  # TODO
@@ -383,7 +383,7 @@ class CiscoSparkBackend(ErrBot):
 
         log.debug("Registering webhook {} with filter {}".format(url, filter))
 
-        hook = self.session.create_webhook(name, url, resource, event, filter, secret)
+        hook = self.session.webhooks.create(name, url, resource, event, filter, secret)
 
         log.debug("Registration successful")
         return hook
@@ -395,7 +395,7 @@ class CiscoSparkBackend(ErrBot):
         :param webhook: Cisco Spark Webhook ID
         """
         log.debug("Deleting webhook id {}".format(webhook.id))
-        self.session.delete_webhook(webhook.id)
+        self.session.webhooks.delete(webhook.id)
         log.debug("Done! Webhook deleted")
 
     def delete_webhooks(self):
