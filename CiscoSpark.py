@@ -246,13 +246,13 @@ class CiscoSparkRoom(Room):
         """
         Create a webhook that listens to new messages for this room (id)
         """
-        self._webhook = self._bot.create_webhook(filter="roomId={}".format(self.id))
+        self._webhook = self._bot.webhooks.create(filter="roomId={}".format(self.id))
 
     def webhook_delete(self):
         """
         Delete the webhook for this room
         """
-        self._bot.delete_webhook(self._webhook)
+        self._bot.webhooks.delete(self._webhook)
 
     def leave(self, reason=None):
         log.debug("Leave room yet to be implemented")  # TODO
