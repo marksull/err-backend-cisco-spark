@@ -48,7 +48,7 @@ class CiscoSparkPerson(Person):
 
     @id.setter
     def id(self, val):
-        self._spark_person.id = val
+        self._spark_person._json['id'] = val
 
     @property
     def emails(self):
@@ -192,7 +192,7 @@ class CiscoSparkRoom(Room):
 
     @id.setter
     def id(self, val):
-        self._spark_room.id = val
+        self._spark_room._json['id'] = val
 
     @property
     def title(self):
