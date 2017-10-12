@@ -560,7 +560,7 @@ class CiscoSparkBackend(ErrBot):
         else:
             self.session.create_message(roomId=mess.to.room.id, text=mess.body, markdown=md)
 
-    def build_reply(self, mess, text=None, private=False):
+    def build_reply(self, mess, text=None, private=False, threaded=False):
         """
         Build a reply in the format expected by errbot by swapping the to and from source and destination
 
