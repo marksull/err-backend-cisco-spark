@@ -556,9 +556,9 @@ class CiscoSparkBackend(ErrBot):
         """
         md = markdown(mess.body, extensions=['markdown.extensions.nl2br', 'markdown.extensions.fenced_code'])
         if type(mess.to) == CiscoSparkPerson:
-            self.session.create_message(toPersonId=mess.to.id, text=mess.body, markdown=md)
+            self.session.messages.create(toPersonId=mess.to.id, text=mess.body, markdown=md)
         else:
-            self.session.create_message(roomId=mess.to.room.id, text=mess.body, markdown=md)
+            self.session.messages.create(roomId=mess.to.room.id, text=mess.body, markdown=md)
 
     def build_reply(self, mess, text=None, private=False, threaded=False):
         """
