@@ -1,7 +1,9 @@
 err-backend-cisco-spark
 ======
 
-DEPRECATED: Please see https://github.com/marksull/err-backend-cisco-webex-teams
+
+DEPRECATED: Please use https://github.com/marksull/err-backend-cisco-webex-teams
+
 
 This is an errbot (http://errbot.io) backend for Cisco Spark (https://www.ciscospark.com)
 
